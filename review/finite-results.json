@@ -1,0 +1,188 @@
+{
+  "status": "PASS",
+  "rows": [
+    {
+      "n": 1,
+      "monomials": 6,
+      "wronskian_size": 5,
+      "prime": 1000003,
+      "delta_mod_p": 831191,
+      "matrix_sha256": "2f71ea3726bbfe27978997f61cca7407eec72c98b2dc312514d9ff57c3fa4454",
+      "coefficient_count_recovered": 6,
+      "recovered": {
+        "beta": 2,
+        "zeta": 3,
+        "S0": 11,
+        "I0": [
+          2
+        ],
+        "N0": 100,
+        "R0": 87
+      },
+      "symbolic_polynomial_exact_match": true,
+      "four_inverse_coefficients_symbolically_verified": true,
+      "primitivity_boundary_verified": true,
+      "translation_support_verified": true,
+      "raw_derivative_orders": 5,
+      "negative_control_rejected": true,
+      "seconds": 0.0003048750222660601
+    },
+    {
+      "n": 2,
+      "monomials": 16,
+      "wronskian_size": 15,
+      "prime": 1000003,
+      "delta_mod_p": 141856,
+      "matrix_sha256": "768d43eb39e89fa3c022803287c08c7d0f13c26ebc5ec76ee7d2ee6b5eb40e18",
+      "coefficient_count_recovered": 16,
+      "recovered": {
+        "beta": 2,
+        "zeta": 3,
+        "S0": 11,
+        "I0": [
+          2,
+          3
+        ],
+        "N0": 100,
+        "R0": 84
+      },
+      "symbolic_polynomial_exact_match": true,
+      "four_inverse_coefficients_symbolically_verified": true,
+      "primitivity_boundary_verified": true,
+      "translation_support_verified": true,
+      "raw_derivative_orders": 15,
+      "negative_control_rejected": true,
+      "seconds": 0.0005463749985210598
+    },
+    {
+      "n": 3,
+      "monomials": 36,
+      "wronskian_size": 35,
+      "prime": 1000003,
+      "delta_mod_p": 780877,
+      "matrix_sha256": "142a03936727b8312128a7fcdea443d16256d940be6763d3d671a1bf12d0235c",
+      "coefficient_count_recovered": 36,
+      "recovered": {
+        "beta": 2,
+        "zeta": 3,
+        "S0": 11,
+        "I0": [
+          2,
+          3,
+          4
+        ],
+        "N0": 100,
+        "R0": 80
+      },
+      "symbolic_polynomial_exact_match": true,
+      "four_inverse_coefficients_symbolically_verified": true,
+      "primitivity_boundary_verified": true,
+      "translation_support_verified": true,
+      "raw_derivative_orders": 35,
+      "negative_control_rejected": true,
+      "seconds": 0.0030228749965317547
+    },
+    {
+      "n": 4,
+      "monomials": 70,
+      "wronskian_size": 69,
+      "prime": 1000003,
+      "delta_mod_p": 472291,
+      "matrix_sha256": "1639c06e3f59823d8f4dfaed2efce12e12743669aa33b82f602c0b16636d3de3",
+      "coefficient_count_recovered": 70,
+      "recovered": {
+        "beta": 2,
+        "zeta": 3,
+        "S0": 11,
+        "I0": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "N0": 100,
+        "R0": 75
+      },
+      "symbolic_polynomial_exact_match": true,
+      "four_inverse_coefficients_symbolically_verified": true,
+      "primitivity_boundary_verified": true,
+      "translation_support_verified": true,
+      "raw_derivative_orders": 69,
+      "negative_control_rejected": true,
+      "seconds": 0.01904220797587186
+    },
+    {
+      "n": 5,
+      "monomials": 131,
+      "wronskian_size": 130,
+      "prime": 1000003,
+      "delta_mod_p": 65799,
+      "matrix_sha256": "3cb59ab1e99ec9443197c9bf7e77dcf6bc611ed11b5e49558c16933649abbcf4",
+      "coefficient_count_recovered": 131,
+      "recovered": {
+        "beta": 2,
+        "zeta": 3,
+        "S0": 11,
+        "I0": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "N0": 100,
+        "R0": 69
+      },
+      "symbolic_polynomial_exact_match": true,
+      "four_inverse_coefficients_symbolically_verified": true,
+      "primitivity_boundary_verified": true,
+      "translation_support_verified": true,
+      "raw_derivative_orders": 130,
+      "negative_control_rejected": true,
+      "seconds": 0.12084508297266439
+    },
+    {
+      "n": 6,
+      "monomials": 227,
+      "wronskian_size": 226,
+      "prime": 1000003,
+      "delta_mod_p": 401269,
+      "matrix_sha256": "e630e80ffd955771d8d1c8ff73956fb64d9ee5adc43233467fb325f98afeffe3",
+      "coefficient_count_recovered": 227,
+      "recovered": {
+        "beta": 2,
+        "zeta": 3,
+        "S0": 11,
+        "I0": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "N0": 100,
+        "R0": 62
+      },
+      "symbolic_polynomial_exact_match": true,
+      "four_inverse_coefficients_symbolically_verified": true,
+      "primitivity_boundary_verified": true,
+      "translation_support_verified": true,
+      "raw_derivative_orders": 226,
+      "negative_control_rejected": true,
+      "seconds": 0.6435046250117011
+    }
+  ],
+  "seconds": 0.7895273329922929,
+  "peak_rss_bytes": 30670848,
+  "limits": {
+    "wall_seconds": 300,
+    "cpu_seconds": 300,
+    "rss_bytes": 1073741824,
+    "rss_poll_seconds": 0.05,
+    "cost_usd": 0
+  },
+  "producer_or_cas_imported": false,
+  "all_n_claim": "Analytic/algebraic proof audited separately; finite tests are not extrapolated.",
+  "implementation": "Separate Laurent-polynomial differentiation, ordinary derivative jets, full coefficient solve and state inverse; polynomial utility reused from the reviewer’s earlier work."
+}

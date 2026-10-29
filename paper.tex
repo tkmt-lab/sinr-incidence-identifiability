@@ -1,0 +1,243 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newcommand{\D}{D}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\DeclareMathOperator{\Frac}{Frac}
+\title{Global identifiability\\ for the staged-infection SIR model}
+\author{Tatsuhiko Takimoto\\Independent researcher}
+\date{Draft, 29 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Pant, Saucedo, and Pogudin formulate global identifiability of the staged-infection SIR model from incidence as Conjecture~1 of version~2 of their preprint. We give a proof for each known number of infection stages and known total population. A generic real parameter and initial-state point is distinguished from every real competing point by its analytic incidence germ. The argument constructs a normalized polynomial relation in incidence derivatives and cumulative incidence. Its coefficients recover the susceptible initial value and both rates. To establish coefficient uniqueness for every stage number, we show that the rational differential field of the model has no nonconstant constants and that the required Wronskian remains nonzero on the initial cumulative-incidence slice. Exact computations for one through six stages supplement the argument.
+\end{abstract}
+
+\section{Question and scope}
+The question and model considered here are due to Pant, Saucedo, and Pogudin~\cite{PSP}, specifically equation~(3.3) and Conjecture~1 in version~2. Their definition of global identifiability compares a generic true point with all real competing points. We retain that quantifier; a competitor is not assumed positive or generic.
+
+The theorem has a prose proof examined by a separate AI reviewer in two stages, together with a separate implementation of the finite checks. The finite computations in Appendix~\ref{app:checks} check algebra and examples; the arbitrary-stage result rests on the prose argument. This is neither human peer review nor formal proof certification, and priority has not been established. The accompanying \texttt{VERIFICATION-RECORD.md} describes the review and its independence boundary.
+
+Fix a known integer $n\geq1$. Write $J=\sum_{j=1}^n I_j$ and let $D=d/dt$. The model is
+\begin{align}
+ DS&=-\beta SJ,& DI_1&=\beta SJ-\zeta I_1,\notag\\
+ DI_j&=\zeta I_{j-1}-\zeta I_j\quad(2\leq j\leq n),&
+ DR&=\zeta I_n, & y&=\beta SJ.\label{eq:model}
+\end{align}
+The known population $N_0=S+J+R$ eliminates $R$. We use coordinates
+\[\theta=(\beta,\zeta,S(0),I_1(0),\ldots,I_n(0))\in\R^{n+3};\]
+$R(0)$ is fixed by conservation. Polynomial ODEs define analytic germs at every real initial point.
+
+\begin{theorem}\label{thm:main}
+For each fixed $n\geq1$ and known $N_0$, there is a nonempty real Zariski-open set $U_n$ of true points such that, for every $\theta\in U_n$ and every real point $\widetilde\theta$, equality of their incidence germs implies $\widetilde\theta=\theta$. Consequently both rates and all initial states, including $R(0)$, are generically globally identifiable.
+\end{theorem}
+The observation is an exact analytic germ. The statement does not concern estimation from finitely many sampled values, noise, unknown $N_0$, or inference of $n$.
+
+\section{A polynomial consistency relation}
+Put $C(t)=\int_0^t y(\tau)\,d\tau$, $s=S(0)$, and $q=s-C=S$.
+Let $y_j=D^jy$ and define
+\begin{equation}
+ Q_n(D,z)=\sum_{j=0}^{n-1}\binom n{j+1}z^{n-1-j}D^j
+ =\sum_{k=0}^{n-1}z^k(D+z)^{n-1-k}.
+\end{equation}
+The chain equations imply
+\begin{equation}\label{eq:chain}
+ (D+\zeta)^n J=Q_n(D,\zeta)y,\qquad
+ DQ_n(D,z)=(D+z)^n-z^n.
+\end{equation}
+Indeed $(D+\zeta)I_1=y$ and $(D+\zeta)I_j=\zeta I_{j-1}$; applying $(D+\zeta)^n$ and summing gives the first identity, without division by $\zeta$.
+
+On $q\ne0$, define polynomials by
+\begin{equation}
+ P_0=y_0,\qquad P_{k+1}=qDP_k+(k+1)y_0P_k,
+ \quad Dq=-y_0,\quad Dy_j=y_{j+1}.
+\end{equation}
+Induction gives $D^k(y/q)=P_k/q^{k+1}$. Substituting $J=y/(\beta q)$ in~\eqref{eq:chain} and clearing denominators gives
+\begin{equation}\label{eq:F}
+ F_n=\sum_{k=0}^n\binom nk\zeta^{n-k}q^{n-k}P_k
+       -\beta q^{n+1}Q_n(D,\zeta)y=0.
+\end{equation}
+Its four relevant coefficients, after expansion in $C,y_0,\ldots,y_n$, are
+\begin{align}
+ [C^ny_n]F_n&=(-1)^n,&
+ [C^{n-1}y_n]F_n&=(-1)^{n-1}ns,\label{eq:coeff}\\
+ [C^{n+1}y_{n-1}]F_n&=(-1)^n\beta,&
+ [C^ny_{n-1}]F_n&=(-1)^n\bigl(n\zeta-(n+1)\beta s\bigr).\notag
+\end{align}
+These follow by keeping the terms linear in the $y_j$: the leading part of $P_k$ is $q^k y_k$, with the remainder having at least two $y$ factors. These formulas also hold for $n=1$.
+
+Let $M_n$ be the finite set of observable monomials occurring in $F_n$ over $\Q(\beta,\zeta,s)$, and put
+\begin{equation}
+ h=C^ny_n,\qquad B_n=M_n\setminus\{h\},\qquad m_n=|M_n|.
+\end{equation}
+Order $B_n$ once and for all, and define
+\begin{equation}\label{eq:Delta}
+ \Delta_n=\left.\det\bigl(D^i f\bigr)_{0\leq i\leq m_n-2,\ f\in B_n}\right|_{t=0}.
+\end{equation}
+The ordering only affects its sign. The remaining task is to show $\Delta_n$ is a nonzero polynomial for every $n$.
+
+\section{The rational constant field}
+Work over a characteristic-zero field $k$ containing nonzero $\beta,\zeta$, let $D$ act trivially on $k$, and take the state coordinates to be algebraically independent. In particular, we will use $k=\Q(\beta,\zeta,s)$. Set
+\begin{equation}
+ T=\sum_{j=1}^n(n-j+1)I_j,\qquad r=\zeta/\beta.
+\end{equation}
+The equations give $DT=n\beta SJ-\zeta J$. Thus $T+nS-r\log S$ is a formal first integral. We use this expression to analyze rational first integrals; we do not adjoin $\log S$ to the rational state field.
+
+\subsection{Nonresonance along the equilibrium line}
+At $S=u,I=0$, with $u$ transcendental over $k$, the infection linearization is
+$B(u)=\zeta(L-\mathrm{Id})+\beta u e_1h_0$,
+where $h_0=(1,\ldots,1)$ and $L$ has ones on its subdiagonal. The chain determinant gives
+\begin{equation}
+ \det(\lambda\mathrm{Id}-B(u))=(\lambda+\zeta)^n-\beta u Q_n(\lambda,\zeta).
+\end{equation}
+With $w=(\lambda+\zeta)/\zeta$ and $a=\beta u/\zeta$, the equation becomes
+\begin{equation}\label{eq:roots}
+ w^n=aH(w),\qquad H(w)=1+w+\cdots+w^{n-1}.
+\end{equation}
+
+\begin{lemma}\label{lem:nonres}
+The eigenvalues $\lambda_1,\ldots,\lambda_n$ over an algebraic closure of $k(u)$ have no nonzero integer relation $\sum_j b_j\lambda_j=0$.
+\end{lemma}
+\begin{proof}
+For $n=1$, the eigenvalue is $\beta u-\zeta$. For $n\geq2$, set $a=t^n$. The equation $w=tH(w)^{1/n}$ has a unique solution $w(t)=t+O(t^2)$, and the roots of~\eqref{eq:roots} are $w(\omega_jt)$ for the distinct $n$th roots of unity $\omega_j$. Formal Lagrange inversion yields
+\begin{equation}
+ c_\ell=[t^\ell]w(t)=\frac1\ell[z^{\ell-1}]H(z)^{\ell/n}.
+\end{equation}
+This coefficient identity also follows by substituting $t=z/H(z)^{1/n}$ in the formal residue for $[t^\ell]w(t)$ and using that a derivative has zero residue. For $1\leq\ell\leq n-1$, the identity $H(z)=(1-z^n)/(1-z)$ gives
+\begin{equation}
+ c_\ell=\frac1\ell\frac{(\ell/n)(\ell/n+1)\cdots(\ell/n+\ell-2)}{(\ell-1)!}\ne0,
+\end{equation}
+with empty product one. A relation among $\lambda_j=\zeta(w(\omega_jt)-1)$ gives $\sum b_j=0$ from the constant term and $\sum b_j\omega_j^\ell=0$ for $1\leq\ell\leq n-1$. The Fourier, or Vandermonde, matrix is invertible, so all $b_j$ vanish. The linear terms distinguish the roots and also show that $B(u)$ is diagonalizable over an algebraic extension. This is nonresonance over the variable $u$, not at every real specialization of $u$.
+\end{proof}
+
+\begin{lemma}\label{lem:linear}
+For a diagonal derivation $E=\sum\lambda_jX_j\partial_{X_j}$ with integer-nonresonant eigenvalues, the rational constants are exactly the coefficient field.
+\end{lemma}
+\begin{proof}
+If $E(P/Q)=0$ with coprime polynomials $P,Q$, then $P\mid EP$ and $Q\mid EQ$. Since $E$ does not raise total degree, $EP=cP$ and $EQ=cQ$ for a scalar $c$. Distinct monomials have distinct weights $\sum\alpha_j\lambda_j$ by nonresonance. Hence $P$ and $Q$ are single monomials of equal weight, and their exponent vectors coincide. Their quotient is a scalar. The zero-weight case has the same conclusion.
+\end{proof}
+
+\subsection{Formal center coordinate and rational functions with poles}
+Consider the formal equation
+\begin{equation}\label{eq:center}
+ T+n(S-u)-r\log(S/u)=0,\qquad S=u+O(I).
+\end{equation}
+Here the logarithm means the series for $\log(1+(S-u)/u)$. The derivative with respect to $S$ at $I=0$ is $n-r/u\ne0$ in $k(u)$. Formal implicit inversion gives $S=\phi(u,I)\in k(u)[[I]]$, with inverse $u=S+O(I)$. Substitution therefore embeds the rational state field into the fraction field of this formal series ring. Differentiating~\eqref{eq:center} along the vector field gives
+\begin{equation}\label{eq:formalD}
+ Du=0,\qquad DI=B(u)I+O(I^2).
+\end{equation}
+No convergence or choice of a real logarithm is involved.
+
+Every nonzero element of $\Frac(k(u)[[I]])$ has finite lowest total degree and a homogeneous rational leading term, obtained by dividing the lowest homogeneous parts of its numerator and denominator. For an invariant quotient, the leading term is annihilated by the linear part of~\eqref{eq:formalD}. This assertion holds in the entire formal fraction field, not only on the image of the rational state field.
+
+Suppose $F\in k(S,I)$ satisfies $DF=0$. After substitution, take this homogeneous quotient. This defines a nonzero homogeneous rational leading term $F_d(I;u)$, including when the denominator vanishes at $I=0$. The lowest-degree part of $DF=0$ is
+$(B(u)I)\cdot\partial_I F_d=0$. By Lemmas~\ref{lem:nonres} and~\ref{lem:linear}, after diagonalization $F_d$ is independent of $I$. Thus $d=0$ and $F_d=f(u)\in k(u)$; membership in $k(u)$ follows because the original homogeneous quotient is defined over that field. Subtract $f(u)$ in $\Frac(k(u)[[I]])$. The remainder need not be the image of an original rational state function. Its numerator has had its leading homogeneous part cancelled, so if nonzero it has strictly positive lowest degree. Since $Du=0$, it remains invariant, contradicting the same leading-term argument in this larger field. Consequently
+\begin{equation}\label{eq:Ff}
+ F(\phi(u,I),I)=f(u).
+\end{equation}
+This leading-quotient argument covers rational functions with poles, not just formal power series.
+
+Taking total differentials in~\eqref{eq:center} gives
+\begin{equation}
+ dT+(n-r/S)dS=(n-r/u)du.
+\end{equation}
+Together with~\eqref{eq:Ff}, this says $dF$ is proportional to the left-hand side. Use $T$ and any complementary linear infection coordinates. Their partial derivatives in $F$ vanish, so $F\in k(S,T)$, and
+$F_S=(n-r/S)F_T$. These are identities between original rational functions, because the formal substitution is injective.
+
+Write $Z=T+nS$ and $F(S,T)=G(S,Z)$. The last identity becomes
+\begin{equation}
+ SG_S+rG_Z=0.
+\end{equation}
+Expand $G$ at $S=0$ in $k(Z)((S))$. Each rational coefficient $a_\ell(Z)$ satisfies $r a_\ell'+\ell a_\ell=0$. If $\ell\ne0$, a nonzero rational function cannot have logarithmic derivative $-\ell/r$: its logarithmic derivative is $O(1/Z)$ at infinity. Thus $a_\ell=0$ for $\ell\ne0$, and $a_0\in k$. Injectivity of Laurent expansion proves the following.
+\begin{lemma}\label{lem:constants}
+For every $n\geq1$, the constant field of $k(S,I_1,\ldots,I_n)$ with derivation~\eqref{eq:model} is $k$.
+\end{lemma}
+
+\section{Observable relations and the Wronskian}
+Now take $k=\Q(\beta,\zeta,s)$ and $C=s-S$.
+The infection chain, regarded as a linear system driven by the known input $y$, has observation $J$. Its observation matrix has determinant
+\begin{equation}
+ (-1)^{n(n-1)/2}\zeta^{n(n-1)/2}\ne0.
+\end{equation}
+For example, successive differences of its rows reduce it to the triangular system obtained from $J'=y-\zeta I_n$ and $(D+\zeta)I_j=\zeta I_{j-1}$. Therefore $J,\ldots,D^{n-1}J$, together with the required input derivatives, recover the infection coordinates. Differentiating $y=\beta SJ$ is triangular in the derivatives of $J$, with leading coefficient $\beta S$ at every order. It follows recursively that
+$C,y_0,\ldots,y_{n-1}$ and $S,I_1,\ldots,I_n$ are birational coordinates. In particular, the former are algebraically independent over $k$.
+
+As a polynomial in $y_n$, relation~\eqref{eq:F} has the form
+\begin{equation}
+ F_n=q^ny_n+A,\qquad A\bmod q=n!y_0^{n+1}.
+\end{equation}
+The recurrence for $P_k$ gives the second formula directly. Thus $q^n$ and $A$ are coprime. Gauss's lemma makes $F_n$ irreducible, and the kernel of evaluation from $k[C,y_0,\ldots,y_n]$ to the state field is exactly $(F_n)$: over the fraction field in the first $n+1$ variables the kernel is the linear relation, and primitivity contracts it to $(F_n)$.
+
+If a $k$-linear combination $G$ of $M_n$ evaluates to zero, write $G=H F_n$. The only monomials involving $y_n$ are $C^ay_n$ for $0\leq a\leq n$. Degree in $y_n$ first shows that $H$ is independent of $y_n$. Comparing its coefficient gives $A_1(C)=Hq^n$, where $\deg_C A_1\leq n$. Hence $H$ contains no other $y_j$ and is a scalar in $k$. Thus the only linear relation among $M_n$ is a scalar multiple of $F_n$. Since $[h]F_n=(-1)^n$, the family $B_n$ is linearly independent over $k$.
+
+For completeness, in a characteristic-zero differential field the Wronskian of a finite family is zero exactly when the family is linearly dependent over its constant field. The needed implication has a short induction. In a minimal family $f_1,\ldots,f_m$ with zero Wronskian, the first $m-1$ functions have invertible Wronskian. Solve
+$D^rf_m=\sum_{i<m}a_iD^rf_i$ for $0\leq r\leq m-2$; the zero determinant gives the next equation too. Differentiating each equation and subtracting the next one yields
+$\sum_{i<m}(Da_i)D^rf_i=0$ for $0\leq r\leq m-2$. Invertibility gives $Da_i=0$. The converse is immediate. See also Bostan and Dumas~\cite{BD} for the analytic-function setting.
+
+Lemma~\ref{lem:constants} therefore makes the unrestricted Wronskian $W_n$ of $B_n$ nonzero. It remains to justify restriction to $C=0$; nonzero functions can vanish on that slice.
+
+For each monomial in the $y_j$, its coefficient in $F_n$ is a polynomial in $q$ with coefficients in $\Q[\beta,\zeta]$. If its degree in $q$ is $d$, expansion of $q=s-C$ produces every power $C^j$, $0\leq j\leq d$: the coefficient of $C^j$ has a nonzero leading term of degree $d-j$ in $s$. Consequently $M_n$ contains a complete ladder of powers of $C$ for each $y$ monomial. Removing $h$ truncates the $y_n$ ladder to $0,\ldots,n-1$, still complete. Translation $C\mapsto C+a$, for a constant $a$, acts on $B_n$ by a triangular binomial matrix with diagonal entries one.
+
+In state coordinates, changing the constant $s$ changes $C=s-S$ but leaves all $y_j$ fixed. Translation commutes with $D$ and has determinant one on the basis, so $W_n(s-S,S,I)$ is independent of $s$. After all differentiations have been performed with $s$ constant, substitute $s=S$. This sets $C=0$ without changing the nonzero Wronskian. It is an algebraic substitution after differentiation, not an assertion that $Ds=DS$. Since the model and monomials are polynomial, the resulting initial-value expression $\Delta_n$ is a nonzero integer-coefficient polynomial for every $n$.
+
+\section{Recovery against all real competitors}
+Define
+\begin{equation}
+ U_n=\{\theta:\ \beta\zeta y(0)\Delta_n(\theta)\ne0\}.
+\end{equation}
+Each factor is a nonzero polynomial, so $U_n$ is nonempty Zariski open and Euclidean open dense. Fixing $N_0$ only determines $R(0)$ and does not alter this conclusion.
+
+Take a true point in $U_n$ and any real competitor with the same incidence germ. Their $C$ germs also agree. Nonzero $y(0)$ implies the competing transmission rate and susceptible initial value are nonzero, so the derivation of~\eqref{eq:F} applies near zero. Its coefficient of $h$ is always $(-1)^n$, including when the competing progression rate is zero. Differentiating $F_n=0$ through order $m_n-2$ gives a linear system for the other coefficients, with coefficient matrix~\eqref{eq:Delta}. This matrix depends only on the common observation and is invertible. Hence the normalized coefficient vectors of the true and competing relations agree.
+
+If $a_f=[f]F_n$, formula~\eqref{eq:coeff} gives the explicit recovery
+\begin{align}
+ s&=\frac{(-1)^{n-1}}n a_{C^{n-1}y_n},&
+ \beta&=(-1)^n a_{C^{n+1}y_{n-1}},\notag\\
+ \zeta&=\frac{(-1)^n a_{C^ny_{n-1}}+(n+1)\beta s}{n}.
+\end{align}
+Thus these three quantities agree, and the competitor's progression rate must also be nonzero. Although the high-order consistency equation may be weaker than the original chain at zero progression rate, we use it only as a necessary condition; every competing chain trajectory still satisfies it.
+
+Finally $S=s-C$ and $J=y/(\beta S)$ are recovered as germs, and
+\begin{equation}
+ I_{n-j}=\zeta^{-j-1}(D+\zeta)^j(y-DJ)\quad(0\leq j\leq n-1),
+ \qquad R=N_0-S-J.
+\end{equation}
+Their initial values agree as well. This completes the proof of Theorem~\ref{thm:main}.
+
+\paragraph{Use of AI.}
+AI assistance was used to develop and check the argument, implement the finite computations, and prepare the exposition. The author retains responsibility for the mathematical claims, source attribution, and any subsequent dissemination.
+
+\appendix
+\section{Finite exact checks}\label{app:checks}
+The accompanying standard-library Python programs expand~\eqref{eq:F} with integer coefficients, check the four recovery coefficients and the infection observation determinant, and evaluate the initial Wronskian by a separate ODE Taylor-series computation over $\mathbb F_{1000003}$. The specialization is $\beta=2$, $\zeta=3$, $S(0)=11$, and $I_j(0)=j+1$. For each observable monomial, use its exponent tuple in the variable order $(C,y_0,\ldots,y_n)$. Sort these tuples in ascending lexicographic order and remove the tuple of $h=C^ny_n$. These are the columns; rows are the ordinary derivatives $D^i$ in increasing order $i=0,\ldots,m_n-2$. If computed from normalized Taylor coefficients, multiply row $i$ by $i!$ to obtain this ordinary-derivative determinant. This convention fixes the signs in the table.
+\begin{center}
+\begin{tabular}{rrrr}
+\toprule
+$n$ & $m_n$ & Wronskian size & $\Delta_n\bmod1000003$\\
+\midrule
+1&6&5&831191\\
+2&16&15&141856\\
+3&36&35&780877\\
+4&70&69&472291\\
+5&131&130&65799\\
+6&227&226&401269\\
+\bottomrule
+\end{tabular}
+\end{center}
+Further finite controls check $F_n\bmod q=n!y_0^{n+1}$, closure of the monomial basis under translation and its inverse, the characteristic determinant at enough points to compare degree-$n$ polynomials, the weighted-chain telescoping identity, the displayed Puiseux coefficients, and a truncated formal center equation. A deliberately wrong Puiseux coefficient is rejected. These checks supply reproducible finite evidence and transcription controls. The all-$n$ conclusion rests on the prose argument above.
+
+\begin{thebibliography}{9}
+\bibitem{PSP} B. Pant, O. Saucedo, and G. Pogudin.
+\emph{Uncovering identifiability of epidemiological models: basic reproduction number and complementary data streams}.
+medRxiv, version 2, 25 January 2026.
+\href{https://doi.org/10.64898/2026.01.16.26344284}{doi:10.64898/2026.01.16.26344284}.
+Equation (3.3), Definition 1, and Conjecture 1.
+\bibitem{BD} A. Bostan and P. Dumas.
+\emph{Wronskians and linear independence}.
+\href{https://arxiv.org/abs/1301.6598}{arXiv:1301.6598}.
+\end{thebibliography}
+\end{document}

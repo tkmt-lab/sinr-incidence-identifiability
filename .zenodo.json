@@ -1,0 +1,29 @@
+{
+  "title": "Global identifiability for the staged-infection SIR model",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "description": "Prose proof of Conjecture 1 of Pant, Saucedo and Pogudin (medRxiv v2): for each known number n>=1 of infectious stages and known total population, generic real true points are identifiable against all real competitors from the analytic incidence germ. Includes standard-library finite controls n=1..6, not an all-n mechanical proof. Two-stage AI audit and an editorial MINOR review with corrections addressed; no human peer review or formal certification. Excludes unknown n/N0, finite/noisy data and estimation guarantees. Text/data CC BY 4.0; code Apache 2.0.",
+  "creators": [
+    {
+      "name": "Tatsuhiko Takimoto",
+      "affiliation": "Independent researcher"
+    }
+  ],
+  "version": "1.0.0",
+  "license": "cc-by-4.0",
+  "keywords": [
+    "structural identifiability",
+    "staged infection",
+    "SIR",
+    "incidence",
+    "differential algebra",
+    "Wronskian"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/tkmt-lab/sinr-incidence-identifiability",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}

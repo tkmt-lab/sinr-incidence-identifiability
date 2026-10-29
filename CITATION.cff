@@ -1,0 +1,30 @@
+{
+  "cff-version": "1.2.0",
+  "type": "software",
+  "message": "Cite the article and exact supporting-code version.",
+  "title": "Global identifiability for the staged-infection SIR model",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "family-names": "Takimoto",
+      "given-names": "Tatsuhiko",
+      "affiliation": "Independent researcher"
+    }
+  ],
+  "license": "Apache-2.0",
+  "repository-code": "https://github.com/tkmt-lab/sinr-incidence-identifiability",
+  "preferred-citation": {
+    "type": "article",
+    "title": "Global identifiability for the staged-infection SIR model",
+    "authors": [
+      {
+        "family-names": "Takimoto",
+        "given-names": "Tatsuhiko",
+        "affiliation": "Independent researcher"
+      }
+    ],
+    "version": "1.0.0",
+    "license": "CC-BY-4.0",
+    "url": "https://github.com/tkmt-lab/sinr-incidence-identifiability"
+  }
+}

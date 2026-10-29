@@ -1,0 +1,146 @@
+{
+  "n": 1,
+  "variables": [
+    "q",
+    "beta",
+    "zeta",
+    "s",
+    "C",
+    "y0",
+    "y1"
+  ],
+  "terms": [
+    {
+      "powers": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "coefficient": 1
+    },
+    {
+      "powers": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "coefficient": -1
+    },
+    {
+      "powers": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "coefficient": 1
+    },
+    {
+      "powers": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "coefficient": -1
+    },
+    {
+      "powers": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "coefficient": 1
+    },
+    {
+      "powers": [
+        0,
+        1,
+        0,
+        0,
+        2,
+        1,
+        0
+      ],
+      "coefficient": -1
+    },
+    {
+      "powers": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "coefficient": 2
+    },
+    {
+      "powers": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        1,
+        0
+      ],
+      "coefficient": -1
+    }
+  ],
+  "observable_monomials": [
+    [
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      2,
+      0
+    ],
+    [
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      0
+    ],
+    [
+      2,
+      1,
+      0
+    ]
+  ],
+  "observable_dimension": 6,
+  "normalization": -1,
+  "O_det_at_zeta_2": "1",
+  "coefficient_inverse_checked": true
+}

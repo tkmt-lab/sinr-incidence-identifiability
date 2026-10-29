@@ -1,0 +1,44 @@
+{
+  "diagnostics": [
+    {
+      "n": 1,
+      "observable_dimension": 6,
+      "O_det_at_zeta_2": "1",
+      "coefficient_inverse_checked": true
+    },
+    {
+      "n": 2,
+      "observable_dimension": 16,
+      "O_det_at_zeta_2": "-2",
+      "coefficient_inverse_checked": true
+    },
+    {
+      "n": 3,
+      "observable_dimension": 36,
+      "O_det_at_zeta_2": "-8",
+      "coefficient_inverse_checked": true
+    },
+    {
+      "n": 4,
+      "observable_dimension": 70,
+      "O_det_at_zeta_2": "64",
+      "coefficient_inverse_checked": true
+    },
+    {
+      "n": 5,
+      "observable_dimension": 131,
+      "O_det_at_zeta_2": "1024",
+      "coefficient_inverse_checked": true
+    },
+    {
+      "n": 6,
+      "observable_dimension": 227,
+      "O_det_at_zeta_2": "-32768",
+      "coefficient_inverse_checked": true
+    }
+  ],
+  "status": "PASS",
+  "all_n_identifiability": "UNPROVED",
+  "seconds": 0.004369125002995133,
+  "maxrss": 18235392
+}

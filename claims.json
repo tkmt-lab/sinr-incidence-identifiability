@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "title": "Global identifiability for the staged-infection SIR model",
+  "version": "1.0.0",
+  "manuscript_status": "THEOREM",
+  "formal_proof_certificate": false,
+  "human_peer_review": false,
+  "model": {
+    "infectious_stages": "known integer n >= 1",
+    "population": "known N0",
+    "observation": "analytic germ of y=beta*S*sum(I_j)",
+    "rates": "unknown real beta and common progression rate zeta",
+    "true_points": "nonempty real Zariski-open set for each fixed n and N0",
+    "competitors": "all real points with the same n and N0; no positivity, genericity or nonzero-zeta restriction"
+  },
+  "claims": [
+    {
+      "id": "all-n-identifiability",
+      "claim": "For each known n >= 1 and known N0, generic real true points are identifiable against all real competitors from the analytic incidence germ",
+      "support": "paper.tex, Theorem 1 and prose proof",
+      "evidence_type": "prose-proof",
+      "status": "PROSE_PROOF_WITH_TWO_STAGE_AI_AUDIT"
+    },
+    {
+      "id": "finite-controls",
+      "claim": "Exact finite controls at n=1 through 6",
+      "support": "checks/, baseline/, reproduce.py",
+      "evidence_type": "finite-exact-computation",
+      "status": "REPRODUCIBLE_FINITE_CHECKS",
+      "all_n_proof_checked": false
+    }
+  ],
+  "excluded": [
+    "all true points",
+    "unknown n",
+    "unknown N0",
+    "finite sampled data",
+    "noise",
+    "uniform jet-order or stability guarantees",
+    "disease model adequacy",
+    "worldwide priority certification"
+  ],
+  "review_independence": {
+    "stage1": "statement-only derivation frozen first; all-n bridges incomplete; the instruction already exposed the route",
+    "stage2": "producer proof and code viewed; separate finite implementation; no producer execution or import",
+    "fully_independent_all_n_proof": false
+  },
+  "fresh_editorial_reader": {
+    "verdict": "MINOR",
+    "major_count": 0,
+    "minor_count": 2,
+    "corrections": "addressed in the delivered source; no post-correction rereview claimed",
+    "scope": "supplied manuscript and claims only; partial finite recomputation, not original-source or full packet certification"
+  },
+  "novelty_review": {
+    "date": "2026-10-29",
+    "scope": "original v2, supplement, version and author-code updates, author follow-ups, selected 2026 differential-algebra papers",
+    "finding": "No prior all-n proof or disproof identified within the checked sources; partial n=1..5 evidence was already known",
+    "worldwide_priority_established": false
+  },
+  "publication_authorized_by_this_packet": false
+}

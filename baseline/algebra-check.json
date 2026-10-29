@@ -1,0 +1,187 @@
+{
+  "scope": "finite algebra controls only; general proof is PROOF.md",
+  "rows": [
+    {
+      "n": 1,
+      "at_C_equals_s": "1*y0^2",
+      "translation_basis_size": 5,
+      "characteristic_points": 2,
+      "weighted_chain_telescope": true,
+      "puiseux": {
+        "n": 1,
+        "coefficients_c1_to_c_n_minus_1": [],
+        "root_identity_through_degree": 1
+      },
+      "center": {
+        "n": 1,
+        "u": "7",
+        "r": "3/2",
+        "S_minus_u_coefficients": [
+          "0",
+          "-14/11",
+          "-42/1331",
+          "-868/161051",
+          "-21294/19487171",
+          "-2877252/11789738455"
+        ],
+        "formal_identity_through_degree": 5
+      }
+    },
+    {
+      "n": 2,
+      "at_C_equals_s": "2*y0^3",
+      "translation_basis_size": 15,
+      "characteristic_points": 3,
+      "weighted_chain_telescope": true,
+      "puiseux": {
+        "n": 2,
+        "coefficients_c1_to_c_n_minus_1": [
+          "1"
+        ],
+        "root_identity_through_degree": 2
+      },
+      "center": {
+        "n": 2,
+        "u": "7",
+        "r": "3/2",
+        "S_minus_u_coefficients": [
+          "0",
+          "-14/25",
+          "-42/15625",
+          "-1652/9765625",
+          "-15078/1220703125",
+          "-3745476/3814697265625"
+        ],
+        "formal_identity_through_degree": 5
+      }
+    },
+    {
+      "n": 3,
+      "at_C_equals_s": "6*y0^4",
+      "translation_basis_size": 35,
+      "characteristic_points": 4,
+      "weighted_chain_telescope": true,
+      "puiseux": {
+        "n": 3,
+        "coefficients_c1_to_c_n_minus_1": [
+          "1",
+          "1/3"
+        ],
+        "root_identity_through_degree": 4
+      },
+      "center": {
+        "n": 3,
+        "u": "7",
+        "r": "3/2",
+        "S_minus_u_coefficients": [
+          "0",
+          "-14/39",
+          "-14/19773",
+          "-812/30074733",
+          "-18046/15247889631",
+          "-2170924/38653400214585"
+        ],
+        "formal_identity_through_degree": 5
+      }
+    },
+    {
+      "n": 4,
+      "at_C_equals_s": "24*y0^5",
+      "translation_basis_size": 69,
+      "characteristic_points": 5,
+      "weighted_chain_telescope": true,
+      "puiseux": {
+        "n": 4,
+        "coefficients_c1_to_c_n_minus_1": [
+          "1",
+          "1/4",
+          "7/32"
+        ],
+        "root_identity_through_degree": 6
+      },
+      "center": {
+        "n": 4,
+        "u": "7",
+        "r": "3/2",
+        "S_minus_u_coefficients": [
+          "0",
+          "-14/53",
+          "-42/148877",
+          "-3220/418195493",
+          "-282366/1174711139837",
+          "-133603764/16498817959010665"
+        ],
+        "formal_identity_through_degree": 5
+      }
+    },
+    {
+      "n": 5,
+      "at_C_equals_s": "120*y0^6",
+      "translation_basis_size": 130,
+      "characteristic_points": 6,
+      "weighted_chain_telescope": true,
+      "puiseux": {
+        "n": 5,
+        "coefficients_c1_to_c_n_minus_1": [
+          "1",
+          "1/5",
+          "4/25",
+          "21/125"
+        ],
+        "root_identity_through_degree": 8
+      },
+      "center": {
+        "n": 5,
+        "u": "7",
+        "r": "3/2",
+        "S_minus_u_coefficients": [
+          "0",
+          "-14/67",
+          "-42/300763",
+          "-4004/1350125107",
+          "-435246/6060711605323",
+          "-254757636/136032671981474735"
+        ],
+        "formal_identity_through_degree": 5
+      }
+    },
+    {
+      "n": 6,
+      "at_C_equals_s": "720*y0^7",
+      "translation_basis_size": 226,
+      "characteristic_points": 7,
+      "weighted_chain_telescope": true,
+      "puiseux": {
+        "n": 6,
+        "coefficients_c1_to_c_n_minus_1": [
+          "1",
+          "1/6",
+          "1/8",
+          "10/81",
+          "4301/31104"
+        ],
+        "root_identity_through_degree": 10
+      },
+      "center": {
+        "n": 6,
+        "u": "7",
+        "r": "3/2",
+        "S_minus_u_coefficients": [
+          "0",
+          "-14/81",
+          "-14/177147",
+          "-532/387420489",
+          "-23002/847288609443",
+          "-5347412/9265100944259205"
+        ],
+        "formal_identity_through_degree": 5
+      }
+    }
+  ],
+  "status": "PASS",
+  "negative_control_rejected": true,
+  "seconds": 0.09657395799877122,
+  "maxrss": 22036480,
+  "no_new_n_ge_7_wronskians": true,
+  "all_n_proof_checked_by_program": false
+}

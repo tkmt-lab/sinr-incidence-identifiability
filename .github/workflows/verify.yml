@@ -1,0 +1,24 @@
+name: Packet verification
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: PDF extraction utilities
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+      - name: Check file integrity, claim scope, metadata and privacy
+        run: python3 -B check_packet.py
+      - name: Reproduce finite controls
+        run: python3 -B reproduce.py

@@ -1,0 +1,149 @@
+{
+  "diagnostics": [
+    {
+      "n": 1,
+      "M": 6,
+      "prime": 1000003,
+      "point": {
+        "beta": 2,
+        "zeta": 3,
+        "S0": 11,
+        "I0": [
+          2
+        ]
+      },
+      "wronskian_size": 5,
+      "rank": 5,
+      "taylor_matrix_det_mod_p": 568860,
+      "derivative_wronskian_det_mod_p": 831191,
+      "identity_jet_orders_checked": 5,
+      "chain_initials_recovered": true,
+      "coefficient_mutation_rejected": true,
+      "seconds": 0.00026820896891877055
+    },
+    {
+      "n": 2,
+      "M": 16,
+      "prime": 1000003,
+      "point": {
+        "beta": 2,
+        "zeta": 3,
+        "S0": 11,
+        "I0": [
+          2,
+          3
+        ]
+      },
+      "wronskian_size": 15,
+      "rank": 15,
+      "taylor_matrix_det_mod_p": 71797,
+      "derivative_wronskian_det_mod_p": 141856,
+      "identity_jet_orders_checked": 15,
+      "chain_initials_recovered": true,
+      "coefficient_mutation_rejected": true,
+      "seconds": 0.00048079201951622963
+    },
+    {
+      "n": 3,
+      "M": 36,
+      "prime": 1000003,
+      "point": {
+        "beta": 2,
+        "zeta": 3,
+        "S0": 11,
+        "I0": [
+          2,
+          3,
+          4
+        ]
+      },
+      "wronskian_size": 35,
+      "rank": 35,
+      "taylor_matrix_det_mod_p": 774443,
+      "derivative_wronskian_det_mod_p": 780877,
+      "identity_jet_orders_checked": 35,
+      "chain_initials_recovered": true,
+      "coefficient_mutation_rejected": true,
+      "seconds": 0.0022723330184817314
+    },
+    {
+      "n": 4,
+      "M": 70,
+      "prime": 1000003,
+      "point": {
+        "beta": 2,
+        "zeta": 3,
+        "S0": 11,
+        "I0": [
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "wronskian_size": 69,
+      "rank": 69,
+      "taylor_matrix_det_mod_p": 418590,
+      "derivative_wronskian_det_mod_p": 472291,
+      "identity_jet_orders_checked": 69,
+      "chain_initials_recovered": true,
+      "coefficient_mutation_rejected": true,
+      "seconds": 0.014814040972851217
+    },
+    {
+      "n": 5,
+      "M": 131,
+      "prime": 1000003,
+      "point": {
+        "beta": 2,
+        "zeta": 3,
+        "S0": 11,
+        "I0": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wronskian_size": 130,
+      "rank": 130,
+      "taylor_matrix_det_mod_p": 188653,
+      "derivative_wronskian_det_mod_p": 65799,
+      "identity_jet_orders_checked": 130,
+      "chain_initials_recovered": true,
+      "coefficient_mutation_rejected": true,
+      "seconds": 0.09532725001918152
+    },
+    {
+      "n": 6,
+      "M": 227,
+      "prime": 1000003,
+      "point": {
+        "beta": 2,
+        "zeta": 3,
+        "S0": 11,
+        "I0": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "wronskian_size": 226,
+      "rank": 226,
+      "taylor_matrix_det_mod_p": 766313,
+      "derivative_wronskian_det_mod_p": 401269,
+      "identity_jet_orders_checked": 226,
+      "chain_initials_recovered": true,
+      "coefficient_mutation_rejected": true,
+      "seconds": 0.5050865419907495
+    }
+  ],
+  "all_n_nonvanishing": "UNPROVED",
+  "seconds": 0.61910283297766,
+  "maxrss": 22839296,
+  "scope": "one exact finite-field witness for each fixed n; not a uniform proof or a replication of author software"
+}

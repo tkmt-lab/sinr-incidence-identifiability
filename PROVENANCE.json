@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "version": "1.0.0",
+  "unchanged_scientific_files": [
+    {
+      "path": "paper.pdf",
+      "bytes": 91763,
+      "sha256": "d78d3e621c1f63352a4090909a7b8c4af8b81a18cd5c528204847f8ebe53c3f4"
+    },
+    {
+      "path": "paper.tex",
+      "bytes": 19505,
+      "sha256": "3dab7da00675b2352044316ac461fae68c506c05fd007ba110a0d5decb30c4f5"
+    },
+    {
+      "path": "reproduce.py",
+      "bytes": 2808,
+      "sha256": "129fd55df9c5fc02dfe9e43da19ea95fc4ec3afbd6663345a7c8a285828234e1"
+    },
+    {
+      "path": "check_offline.py",
+      "bytes": 939,
+      "sha256": "153ecbf8bf6f03d850a0305c707bf998c69426ad6a3f8cd833b30f3347eb47bf"
+    },
+    {
+      "path": "network-deny.sb",
+      "bytes": 44,
+      "sha256": "5c358b8d847211333e7ba22df82d84f796b5f30a41a2682209a949d783adbd08"
+    },
+    {
+      "path": "baseline/algebra-check.json",
+      "bytes": 4361,
+      "sha256": "ab7f168b6e32a66b7cb8ee227841674795524a102e7ea740e95251aca167d189"
+    },
+    {
+      "path": "baseline/diagnostics.json",
+      "bytes": 952,
+      "sha256": "c933d0625067ac5cb141189da235d5911a297421ae8188223bcf21113718938c"
+    },
+    {
+      "path": "baseline/jet-check.json",
+      "bytes": 3343,
+      "sha256": "44b19e9dc1bfc8f2ea20cfe8236721580a6e859a80cfbac5ba2a80aeefec11e2"
+    },
+    {
+      "path": "baseline/polynomial-n1.json",
+      "bytes": 1621,
+      "sha256": "4495b4bf3973175d0ecfdb6029578eb6ea301de87d45e72317f5c5e8cb788642"
+    },
+    {
+      "path": "baseline/polynomial-n2.json",
+      "bytes": 4359,
+      "sha256": "32081c405a716b31c460dc3f2749c2ac50c5b86ff22ac0eec527e0f4d54c28fd"
+    },
+    {
+      "path": "baseline/polynomial-n3.json",
+      "bytes": 10105,
+      "sha256": "670bbf72c3bedd552c519e925edac03608c24d5c23cdf6eab5e8ba6c10c74316"
+    },
+    {
+      "path": "baseline/polynomial-n4.json",
+      "bytes": 20502,
+      "sha256": "9cb223f7cc4046891376ea535e75aea5527222f0ce7b8d7d3a6fd8d78aee5827"
+    },
+    {
+      "path": "baseline/polynomial-n5.json",
+      "bytes": 39875,
+      "sha256": "38723c773fa7822eef2cdf74f46c432c4fea8ac9685e6de4b939617941ab5dcd"
+    },
+    {
+      "path": "baseline/polynomial-n6.json",
+      "bytes": 72165,
+      "sha256": "683842888391d921b0be785dce88feba49197164f165c1dab5a117f1b9e8f653"
+    },
+    {
+      "path": "checks/check_algebra.py",
+      "bytes": 4354,
+      "sha256": "d1864a1a1eed6e98bd259231104daef2f7ebc75306ea76bdecc66b590a603412"
+    },
+    {
+      "path": "checks/check_jets.py",
+      "bytes": 3776,
+      "sha256": "a26b3097a4dd726768d9e847cec3b3aca30296dd2be7d624a419bbacaf03dddf"
+    },
+    {
+      "path": "checks/diagnose.py",
+      "bytes": 3481,
+      "sha256": "3f17804b579bab0ef74afa775fcd9bd731c6dafaa4182f369ba09aa95db56feb"
+    }
+  ],
+  "review_record_derivatives": [
+    {
+      "source_label": "source-readme",
+      "source_bytes": 4714,
+      "source_sha256": "593603864c257ae1ef51fc678a74e66917c72d2b2a8166e174037622b9776679",
+      "public_path": "README.md",
+      "public_bytes": 5479,
+      "public_sha256": "56679cc6264a1647803c9a1d291547648f8948e9431f01ccc2ba966ead44add8",
+      "adaptation": "Publication prose updated; mathematical source unchanged."
+    },
+    {
+      "source_label": "source-verification-record",
+      "source_bytes": 6393,
+      "source_sha256": "b9db3609e6f7047c84246056be12bee98591e6423c7348048e7d2cf5d23f072c",
+      "public_path": "VERIFICATION-RECORD.md",
+      "public_bytes": 6316,
+      "public_sha256": "101863bb4bba96d07746b85869c9df62cac3286028cb5d46a1654e331d930499",
+      "adaptation": "Publication prose updated; mathematical source unchanged."
+    },
+    {
+      "source_label": "source-editorial-corrections",
+      "source_bytes": 1272,
+      "source_sha256": "b9abb3ccb6741e9dbf3c9301a044926a4ec225769175324e26be4ba70a830a74",
+      "public_path": "changes.md",
+      "public_bytes": 1108,
+      "public_sha256": "03277eb01f9a8abe7fc4635b249498186a31365d503257d6e429339d0e5544fa",
+      "adaptation": "Publication prose updated; mathematical source unchanged."
+    },
+    {
+      "source_label": "source-independent-finite-results",
+      "source_bytes": 5162,
+      "source_sha256": "36db6900f45bce0fbb5b44f0decfaa26f72fb94adf8f758df2fed718d8c34fd4",
+      "public_path": "review/finite-results.json",
+      "public_bytes": 5201,
+      "public_sha256": "a4ded64487029451bbb903dad902a0e56d8232d208c33d4d8a4882fd9f63f9a2",
+      "adaptation": "Public summary preserving scientific scope and independence limitations; local routing/path metadata omitted."
+    },
+    {
+      "source_label": "source-two-stage-audit",
+      "source_bytes": 12367,
+      "source_sha256": "978eafdd3009d5b47bea3f85ae07721bb3eb02674e19ac46f7eb2b4ab761e159",
+      "public_path": "review/README.md",
+      "public_bytes": 1062,
+      "public_sha256": "787b86cb9c019e56385121925d4b991e84add2f1ee3ab86bb38cdbb57e8b2556",
+      "adaptation": "Public summary preserving scientific scope and independence limitations; local routing/path metadata omitted."
+    },
+    {
+      "source_label": "source-first-stage-note",
+      "source_bytes": 6060,
+      "source_sha256": "acbff865248408bfb0597458fdf4e27a9dfe9f124fffc01fc11f2b758eeab8a3",
+      "public_path": "review/README.md",
+      "public_bytes": 1062,
+      "public_sha256": "787b86cb9c019e56385121925d4b991e84add2f1ee3ab86bb38cdbb57e8b2556",
+      "adaptation": "Public summary preserving scientific scope and independence limitations; local routing/path metadata omitted."
+    },
+    {
+      "source_label": "source-editorial-reader",
+      "source_bytes": 7570,
+      "source_sha256": "5aec35d42c4ed818d08088665bdcdb67a62ff6c97e239cd6e7d181c0254a226b",
+      "public_path": "review/README.md",
+      "public_bytes": 1062,
+      "public_sha256": "787b86cb9c019e56385121925d4b991e84add2f1ee3ab86bb38cdbb57e8b2556",
+      "adaptation": "Public summary preserving scientific scope and independence limitations; local routing/path metadata omitted."
+    }
+  ],
+  "third_party_papers_or_code_redistributed": false,
+  "source_article": {
+    "doi": "10.64898/2026.01.16.26344284",
+    "version": "2",
+    "pdf_sha256": "de10998aaaff20aa1f78c43a417e783f695fec98fad8b14d295a3970b3bbc498"
+  },
+  "reproduction_scope": "producer finite controls only; historical independent finite run is documented, not rerun by this runner"
+}
