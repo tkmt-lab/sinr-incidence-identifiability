@@ -22,7 +22,7 @@ The proof audit checked rational functions with poles via lowest homogeneous quo
 
 The reviewer separately implemented Laurent-polynomial differentiation of y/q, raw derivative jets using the binomial product rule, construction of its own monomial support, the full coefficient solve, and recovery of all states. Its polynomial utility was reused from the reviewer’s earlier work. No producer program or CAS was executed or imported. The historical run is documented in `review/finite-results.json`; the executable reproduction path in this public packet remains the three producer-side finite-control programs.
 
-For n=1 through 6, the reported determinants modulo 1000003 were 831191, 141856, 780877, 472291, 65799, and 401269. The separate implementation recovered beta=2, zeta=3, S0=11, Ij0=j+1 and, with N0=100, the remaining R0. It reconstructed 486 observable coefficients and checked 480 relation rows. The report records 0.790 seconds and 30,670,848 bytes peak RSS, with the normalization mutation rejected. These are the the two-stage audit run's measurements, not measurements from this manuscript revision.
+For n=1 through 6, the reported determinants modulo 1000003 were 831191, 141856, 780877, 472291, 65799, and 401269. The separate implementation recovered beta=2, zeta=3, S0=11, Ij0=j+1 and, with N0=100, the remaining R0. It reconstructed 486 observable coefficients and checked 480 relation rows. The report records 0.790 seconds and 30,670,848 bytes peak RSS, with the normalization mutation rejected. These are the historical audit run's measurements, not measurements from this manuscript revision.
 
 ## Source fidelity and preserved evidence
 
